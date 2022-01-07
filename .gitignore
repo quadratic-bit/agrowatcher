@@ -129,4 +129,8 @@ dmypy.json
 .pyre/
 
 # Intelij configurations
-.idea/
+.idea
+.vscode
+
+# Node modules
+node_modules/
