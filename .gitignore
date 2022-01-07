@@ -130,7 +130,3 @@ dmypy.json
 
 # Intelij configurations
 .idea
-.vscode
-
-# Node modules
-node_modules/

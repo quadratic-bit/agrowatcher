@@ -1,5 +1,7 @@
 <template>
-  <div v-html="msg"></div>
+  <div>
+    <div v-html="msg"></div>
+  </div>
 </template>
 
 <script>
@@ -7,6 +9,11 @@ import axios from 'axios'
 
 export default {
   name: 'Ping',
+  metaInfo () {
+    return {
+      title: 'Ping-Pong'
+    }
+  },
   data () {
     return {
       msg: ''
