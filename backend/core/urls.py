@@ -1,5 +1,5 @@
 from django.urls import path
-from core import views
+from backend.core import views
 
 urlpatterns = [
     path('ping/', views.ping)
