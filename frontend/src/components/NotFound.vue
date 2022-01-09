@@ -1,11 +1,37 @@
 <template>
-  <div class="container d-flex align-items-center" id="text">
-    <div class="row" id="text-row">
-      <div class="col-md-2 d-flex align-items-center justify-content-center"><h1 class="mr-3 pr-3">404</h1></div>
-      <div class="d-flex col-md-1 justify-content-center" id="divider"><div class="vr"></div></div>
-      <div class="d-flex col-md-6 align-items-center">
-        <h2 class="font-weight-normal lead" id="desc">The page you requested was not found.</h2>
-      </div>
+  <div id="layoutError">
+    <div id="layoutError_content">
+      <main>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="text-center mt-4">
+                <img alt="Guess you discovered a matrix error..." class="mb-4 img-error"
+                     src="@/assets/images/error-404-monochrome.svg"/>
+                <p class="lead">This requested URL was not found on this server.</p>
+                <a :href="/index/">
+                  <i class="fas fa-arrow-left me-1"></i>
+                  Return to Dashboard
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div id="layoutError_footer">
+      <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; Your Website 2021</div>
+            <div>
+              <a href="#">Privacy Policy</a>
+              &middot;
+              <a href="#">Terms &amp; Conditions</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
@@ -22,14 +48,31 @@ export default {
 </script>
 
 <style scoped>
-#text {
-  height: 100vh;
+#layoutError {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-#divider {
-  height: 4em;
+#layoutError #layoutError_content {
+  min-width: 0;
+  flex-grow: 1;
 }
-#text-row {
-  width: 100%;
-  margin: 0 10% 0 30%;
+#layoutError #layoutError_footer {
+  min-width: 0;
+}
+.img-error {
+  max-width: 20rem;
+}
+a {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+a:hover {
+  color: #0a58ca;
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
 }
 </style>

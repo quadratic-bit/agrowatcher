@@ -10,6 +10,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
+import './assets/styles/fontawesome-all.min.css'
+import './assets/styles/animate.min.css'
+import './assets/styles/swiper.css'
+import './assets/styles/styles.css'
+
 Vue.config.productionTip = false
 Vue.use(VueMeta)
 Vue.use(BootstrapVue)
