@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Terms from '@/components/Terms'
 import Ping from '@/components/Ping'
 import NotFound from '@/components/NotFound'
+import Privacy from '@/components/Privacy'
 
 Vue.use(Router)
 
@@ -22,6 +23,10 @@ export default new Router({
     {
       path: '/terms',
       component: Terms
+    },
+    {
+      path: '/privacy',
+      component: Privacy
     },
     {
       path: '/ping',
