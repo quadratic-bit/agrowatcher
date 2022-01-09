@@ -5,6 +5,7 @@ import Terms from '@/components/Terms'
 import Ping from '@/components/Ping'
 import NotFound from '@/components/NotFound'
 import Privacy from '@/components/Privacy'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 
@@ -27,6 +28,10 @@ export default new Router({
     {
       path: '/privacy',
       component: Privacy
+    },
+    {
+      path: '/login',
+      component: Login
     },
     {
       path: '/ping',
