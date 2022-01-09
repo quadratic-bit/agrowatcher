@@ -33,10 +33,6 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
                  aria-expanded="false">Drop</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                <li><a class="dropdown-item" :href="/article/">Article Details</a></li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
                 <li><a class="dropdown-item" :href="/terms/">Terms Conditions</a></li>
                 <li>
                   <div class="dropdown-divider"></div>
@@ -610,7 +606,6 @@
 
 <script>
 import '@/assets/scripts/bootstrap.min.js'
-import '@/assets/scripts/purecounter.min.js'
 import '@/assets/scripts/replaceme.min.js'
 import Swiper from 'swiper'
 
@@ -618,7 +613,7 @@ export default {
   name: 'Home',
   metaInfo () {
     return {
-      title: 'Ioniq'
+      title: 'Home - Agrowatcher'
     }
   },
   methods: {
