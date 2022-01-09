@@ -6,6 +6,7 @@ import Ping from '@/components/Ping'
 import NotFound from '@/components/NotFound'
 import Privacy from '@/components/Privacy'
 import Login from '@/components/Login'
+import Signup from '@/components/Signup'
 
 Vue.use(Router)
 
@@ -32,6 +33,10 @@ export default new Router({
     {
       path: '/login',
       component: Login
+    },
+    {
+      path: '/signup',
+      component: Signup
     },
     {
       path: '/ping',

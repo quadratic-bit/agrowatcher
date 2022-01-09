@@ -20,7 +20,8 @@
     "swiper": "^7.4.1",
     "vue": "^2.5.2",
     "vue-meta": "^2.4.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

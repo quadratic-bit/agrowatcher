@@ -54,7 +54,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-10 offset-xl-1">
-            <h1 class="text-center">Log In</h1>
+            <h1 class="text-center">Sign Up</h1>
           </div> <!-- end of col -->
         </div> <!-- end of row -->
       </div> <!-- end of container -->
@@ -67,29 +67,33 @@
         <div class="row">
           <div class="col-xl-6 offset-xl-3">
             <div class="text-box mt-5 mb-5">
-              <p class="mb-4">You don't have a password? Then please <a class="blue" :href="/signup/">Sign Up</a></p>
+              <p class="mb-4">Already signed up? Then just <a
+                class="blue" :href="/login/">Log In</a></p>
 
-              <!-- Log In Form -->
+              <!-- Sign Up Form -->
               <form :action="/index/" method="post">
                 <div class="mb-4 form-floating">
                   <input required type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput">Email address</label>
                 </div>
                 <div class="mb-4 form-floating">
+                  <input required type="text" class="form-control" id="floatingInput2" placeholder="Your name">
+                  <label for="floatingInput">Your name</label>
+                </div>
+                <div class="mb-4 form-floating">
                   <input required minlength="6" maxlength="128" type="password" class="form-control"
-                         id="floatingPassword" placeholder="Password">
+                         id="floatingPassword" placeholder="Password" v-on:input="updateStrength" aria-describedby="passStr">
                   <label for="floatingPassword">Password</label>
+                  <small id="passStr" class="form-text text-muted">This password is <span :class="strength">{{ strength }}</span></small>
                 </div>
                 <div class="mb-4 form-check">
                   <input required type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">
-                    I agree with the site's stated <a :href="/privacy/">Privacy Policy</a>
-                    and <a :href="/terms/">Terms & Conditions</a>
-                  </label>
+                  <label class="form-check-label" for="exampleCheck1">I agree with the site's stated <a
+                    :href="/privacy/">Privacy Policy</a> and <a :href="/terms/">Terms & Conditions</a></label>
                 </div>
-                <button type="submit" class="form-control-submit-button">Log in</button>
+                <button type="submit" class="form-control-submit-button">Sign up</button>
               </form>
-              <!-- end of log in form -->
+              <!-- end of sign up form -->
 
             </div> <!-- end of text-box -->
           </div> <!-- end of col -->
@@ -178,18 +182,19 @@
 </template>
 
 <script>
+import zxcvbn from 'zxcvbn'
 import bootstrapValidate from 'bootstrap-validate'
 
 export default {
-  name: 'Login',
+  name: 'Signup',
   metaInfo () {
     return {
-      title: 'Login - Agrowatcher'
+      title: 'Signup - Agrowatcher'
     }
   },
   data () {
     return {
-      strength: ''
+      strength: 'weak'
     }
   },
   methods: {
@@ -197,6 +202,27 @@ export default {
     topFunction: function () {
       document.body.scrollTop = 0 // for Safari
       document.documentElement.scrollTop = 0 // for Chrome, Firefox, IE and Opera
+    },
+    updateStrength: function () {
+      switch (zxcvbn(document.getElementById('floatingPassword').value).score) {
+        case 0:
+          this.strength = 'weak'
+          break
+        case 1:
+          this.strength = 'weak'
+          break
+        case 2:
+          this.strength = 'medium'
+          break
+        case 3:
+          this.strength = 'great'
+          break
+        case 4:
+          this.strength = 'secure'
+          break
+        default:
+          this.strength = 'weak'
+      }
     }
   },
   mounted () {
@@ -294,5 +320,20 @@ export default {
 </script>
 
 <style scoped>
-
+.weak {
+  color: red;
+  font-weight: bold;
+}
+.medium {
+  color: orangered;
+  font-weight: bold;
+}
+.great {
+  color: darkgreen;
+  font-weight: bold;
+}
+.secure {
+  color: mediumslateblue;
+  font-weight: bold;
+}
 </style>
