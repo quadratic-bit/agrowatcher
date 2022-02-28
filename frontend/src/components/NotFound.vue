@@ -8,10 +8,10 @@
               <div class="text-center mt-4">
                 <img alt="Guess you discovered a matrix error..." class="mb-4 img-error"
                      src="@/assets/images/error-404-monochrome.svg"/>
-                <p class="lead">This requested URL was not found on this server.</p>
+                <p class="lead">Запрашиваемая страница не была найдена.</p>
                 <a :href="/index/">
                   <i class="fas fa-arrow-left me-1"></i>
-                  Return to Dashboard
+                  Вернуться на главную
                 </a>
               </div>
             </div>

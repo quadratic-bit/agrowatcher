@@ -5,10 +5,10 @@
       <div class="container">
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" :href="/index/"><img src="@/assets/images/logo.svg" alt="alternative"></a>
+        <!-- <a class="navbar-brand logo-image" :href="/index/"><img src="@/assets/images/logo.svg" alt="alternative"></a>-->
 
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+        <!-- Text Logo -->
+        <a class="navbar-brand logo-text" :href="/index/">Agrowatcher</a>
 
         <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
                 aria-label="Toggle navigation">
@@ -18,31 +18,31 @@
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav ms-auto navbar-nav-scroll">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" :href="/index/">Home</a>
+              <a class="nav-link active" aria-current="page" :href="/index#header/">Главная</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" :href="'/index/#features'">Features</a>
+              <a class="nav-link" :href="/index#features/">Возможности</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" :href="'/index/#details'">Details</a>
+              <a class="nav-link" :href="/index#details/">Подробнее</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" :href="'/index/#pricing'">Pricing</a>
+              <a class="nav-link" :href="/index#pricing/">Тарифы</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
-                 aria-expanded="false">Drop</a>
+                 aria-expanded="false">Больше</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                <li><a class="dropdown-item" :href="/terms/">Terms Conditions</a></li>
+                <li><a class="dropdown-item" :href="/terms/">Условия использования</a></li>
                 <li>
                   <div class="dropdown-divider"></div>
                 </li>
-                <li><a class="dropdown-item" :href="/privacy/">Privacy Policy</a></li>
+                <li><a class="dropdown-item" :href="/privacy/">Политика конфиденциальности</a></li>
               </ul>
             </li>
           </ul>
           <span class="nav-item">
-                        <a class="btn-outline-sm" :href="/login/">Log in</a>
+                        <a class="btn-outline-sm" :href="/login/">Войти</a>
                     </span>
         </div> <!-- end of navbar-collapse -->
       </div> <!-- end of container -->
@@ -236,47 +236,45 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="footer-col first">
-              <h6>About Website</h6>
-              <p class="p-small">Proin ut felis purus vestibulum in orci molestie, efficitur lacus ac pellentesque elit.
-                Fusce mollis laoreet lobortis nulla ac efficitur lacus ac </p>
+              <h6>О сайте</h6>
+              <p class="p-small">Agrowatcher — приложение для точного земледелия, использующее лишь свободные данные со спутников.</p>
             </div> <!-- end of footer-col -->
             <div class="footer-col second">
-              <h6>Links</h6>
+              <h6>Ссылки</h6>
               <ul class="list-unstyled li-space-lg p-small">
-                <li>Important: <a :href="/terms/">Terms & Conditions</a>, <a :href="/privacy/">Privacy Policy</a>
+                <li>Важное: <a :href="/terms/">Terms & Conditions</a>, <a :href="/privacy/">Privacy Policy</a>
                 </li>
-                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a>
-                </li>
-                <li>Menu: <a :href="'/index/#header'">Home</a>, <a :href="'/index/#features'">Features</a>, <a :href="'/index/#details'">Details</a>,
-                  <a :href="'/index/#pricing'">Pricing</a></li>
+<!--                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a>-->
+<!--                </li>-->
+                <li><a href='https://www.freepik.com/vectors/business'>Business vector created by pikisuperstar - www.freepik.com</a></li>
               </ul>
             </div> <!-- end of footer-col -->
             <div class="footer-col third">
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://facebook.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
               <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://twitter.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-twitter fa-stack-1x"></i>
                                 </a>
                             </span>
               <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://pinterest.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-pinterest-p fa-stack-1x"></i>
                                 </a>
                             </span>
               <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://instagram.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-instagram fa-stack-1x"></i>
                                 </a>
                             </span>
-              <p class="p-small">Quam posuerei pellent esque vam <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a>
+              <p class="p-small">Почта поддержки: <a href="mailto:example@example.com"><strong>example@example.com</strong></a>
               </p>
             </div> <!-- end of footer-col -->
           </div> <!-- end of col -->
@@ -290,8 +288,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
+            <p class="p-small">Copyright © <a href="#">Agrowatcher 2022</a></p>
           </div> <!-- end of col -->
+
           <div class="col-lg-6">
             <p class="p-small">Distributed By<a href="https://themewagon.com/" target="_blank"> Themewagon</a></p>
           </div> <!-- end of col -->

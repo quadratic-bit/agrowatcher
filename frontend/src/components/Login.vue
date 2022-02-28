@@ -5,10 +5,10 @@
       <div class="container">
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" :href="/index/"><img src="@/assets/images/logo.svg" alt="alternative"></a>
+        <!-- <a class="navbar-brand logo-image" :href="/index/"><img src="@/assets/images/logo.svg" alt="alternative"></a>-->
 
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+        <!-- Text Logo -->
+        <a class="navbar-brand logo-text" :href="/index/">Agrowatcher</a>
 
         <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
                 aria-label="Toggle navigation">
@@ -18,31 +18,31 @@
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav ms-auto navbar-nav-scroll">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" :href="/index/">Home</a>
+              <a class="nav-link active" aria-current="page" :href="/index#header/">Главная</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" :href="'/index/#features'">Features</a>
+              <a class="nav-link" :href="/index#features/">Возможности</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" :href="'/index/#details'">Details</a>
+              <a class="nav-link" :href="/index#details/">Подробнее</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" :href="'/index/#pricing'">Pricing</a>
+              <a class="nav-link" :href="/index#pricing/">Тарифы</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
-                 aria-expanded="false">Drop</a>
+                 aria-expanded="false">Больше</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                <li><a class="dropdown-item" :href="/terms/">Terms Conditions</a></li>
+                <li><a class="dropdown-item" :href="/terms/">Условия использования</a></li>
                 <li>
                   <div class="dropdown-divider"></div>
                 </li>
-                <li><a class="dropdown-item" :href="/privacy/">Privacy Policy</a></li>
+                <li><a class="dropdown-item" :href="/privacy/">Политика конфиденциальности</a></li>
               </ul>
             </li>
           </ul>
           <span class="nav-item">
-                        <a class="btn-outline-sm" :href="/login/">Log in</a>
+                        <a class="btn-outline-sm" :href="/login/">Войти</a>
                     </span>
         </div> <!-- end of navbar-collapse -->
       </div> <!-- end of container -->
@@ -54,7 +54,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-10 offset-xl-1">
-            <h1 class="text-center">Log In</h1>
+            <h1 class="text-center">Вход</h1>
           </div> <!-- end of col -->
         </div> <!-- end of row -->
       </div> <!-- end of container -->
@@ -67,27 +67,27 @@
         <div class="row">
           <div class="col-xl-6 offset-xl-3">
             <div class="text-box mt-5 mb-5">
-              <p class="mb-4">You don't have a password? Then please <a class="blue" :href="/signup/">Sign Up</a></p>
+              <p class="mb-4">Ещё нет аккаунта? Перейти к <a class="blue" :href="/signup/">Регистрации</a></p>
 
               <!-- Log In Form -->
               <form :action="/index/" method="post">
                 <div class="mb-4 form-floating">
                   <input required type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email address</label>
+                  <label for="floatingInput">Email адрес</label>
                 </div>
                 <div class="mb-4 form-floating">
                   <input required minlength="6" maxlength="128" type="password" class="form-control"
                          id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Password</label>
+                  <label for="floatingPassword">Пароль</label>
                 </div>
                 <div class="mb-4 form-check">
                   <input required type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">
-                    I agree with the site's stated <a :href="/privacy/">Privacy Policy</a>
-                    and <a :href="/terms/">Terms & Conditions</a>
+                    Я согласен с <a :href="/privacy/">Политикой Конфиденциальности</a>
+                    и <a :href="/terms/">Условиями Использования</a>
                   </label>
                 </div>
-                <button type="submit" class="form-control-submit-button">Log in</button>
+                <button type="submit" class="form-control-submit-button">Войти</button>
               </form>
               <!-- end of log in form -->
 
@@ -104,48 +104,45 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="footer-col first">
-              <h6>About Website</h6>
-              <p class="p-small">Proin ut felis purus vestibulum in orci molestie, efficitur lacus ac pellentesque elit.
-                Fusce mollis laoreet lobortis nulla ac efficitur lacus ac </p>
+              <h6>О сайте</h6>
+              <p class="p-small">Agrowatcher — приложение для точного земледелия, использующее лишь свободные данные со спутников.</p>
             </div> <!-- end of footer-col -->
             <div class="footer-col second">
-              <h6>Links</h6>
+              <h6>Ссылки</h6>
               <ul class="list-unstyled li-space-lg p-small">
-                <li>Important: <a :href="/terms/">Terms & Conditions</a>, <a :href="/privacy/">Privacy Policy</a>
+                <li>Важное: <a :href="/terms/">Terms & Conditions</a>, <a :href="/privacy/">Privacy Policy</a>
                 </li>
-                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a>
-                </li>
-                <li>Menu: <a :href="'/index/#header'">Home</a>, <a :href="'/index/#features'">Features</a>, <a
-                  :href="'/index/#details'">Details</a>,
-                  <a :href="'/index/#pricing'">Pricing</a></li>
+<!--                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a>-->
+<!--                </li>-->
+                <li><a href='https://www.freepik.com/vectors/business'>Business vector created by pikisuperstar - www.freepik.com</a></li>
               </ul>
             </div> <!-- end of footer-col -->
             <div class="footer-col third">
                             <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://facebook.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
               <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://twitter.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-twitter fa-stack-1x"></i>
                                 </a>
                             </span>
               <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://pinterest.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-pinterest-p fa-stack-1x"></i>
                                 </a>
                             </span>
               <span class="fa-stack">
-                                <a href="#your-link">
+                                <a href="https://instagram.com">
                                     <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fab fa-instagram fa-stack-1x"></i>
                                 </a>
                             </span>
-              <p class="p-small">Quam posuerei pellent esque vam <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a>
+              <p class="p-small">Почта поддержки: <a href="mailto:example@example.com"><strong>example@example.com</strong></a>
               </p>
             </div> <!-- end of footer-col -->
           </div> <!-- end of col -->
@@ -159,8 +156,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
+            <p class="p-small">Copyright © <a href="#">Agrowatcher 2022</a></p>
           </div> <!-- end of col -->
+
           <div class="col-lg-6">
             <p class="p-small">Distributed By<a href="https://themewagon.com/" target="_blank"> Themewagon</a></p>
           </div> <!-- end of col -->
