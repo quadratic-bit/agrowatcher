@@ -1,6 +1,10 @@
-frontend/src/assets/scripts/bootstrap.min.js linguist-vendored
-frontend/src/assets/scripts/purecounter.min.js linguist-vendored
-frontend/src/assets/scripts/replaceme.min.js linguist-vendored
-frontend/src/assets/styles/animate.min.css linguist-vendored
-frontend/src/assets/styles/fontawesome-all.min.css linguist-vendored
-frontend/src/assets/styles/swiper.css linguist-vendored
+app/static/css/bootstrap.min.css linguist-vendored
+app/static/css/fontawesome-all.min.css linguist-vendored
+app/static/css/styles.css linguist-vendored
+app/static/css/swiper.css linguist-vendored
+
+app/static/js/bootstrap.min.js linguist-vendored
+app/static/js/purecounter.min.js linguist-vendored
+app/static/js/replaceme.min.js linguist-vendored
+app/static/js/swiper.min.js linguist-vendored
+app/static/js/scripts.js linguist-vendored
