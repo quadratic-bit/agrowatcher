@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import Dashboard from '@/components/Dashboard'
 import Terms from '@/components/Terms'
 import Ping from '@/components/Ping'
 import NotFound from '@/components/NotFound'
@@ -21,6 +22,10 @@ export default new Router({
     {
       path: '/index',
       redirect: '/'
+    },
+    {
+      path: '/dashboard',
+      component: Dashboard
     },
     {
       path: '/terms',
