@@ -1,13 +1,8 @@
 # AgroWatcher
-## Separate backend and frontend
-### To launch backend, run
+## Currently, migrating to Flask
+### To launch application run
 ```shell
-cd backend
-python manage.py runserver localhost:8000
-```
-### To launch frontend, run
-```shell
-cd frontend
-npm install
-npm run dev
+export FLASK_APP=app
+export FLASK_ENV=development
+python -m flask run --host=127.0.0.1 --port=8080
 ```
