@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from app.auth import bp_auth
 from app.misc import bp_misc
+from app.dashboard import bp_dashboard
 import os
 
 
@@ -13,6 +14,7 @@ def create_app() -> Flask:
         SQLALCHEMY_TRACK_MODIFICATIONS=True)
     app.register_blueprint(bp_auth)
     app.register_blueprint(bp_misc)
+    app.register_blueprint(bp_dashboard)
 
     db = SQLAlchemy(app)
 

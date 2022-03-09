@@ -1,6 +1,7 @@
 app/static/css/bootstrap.min.css linguist-vendored
 app/static/css/fontawesome-all.min.css linguist-vendored
 app/static/css/swiper.css linguist-vendored
+app/static/css/dashboard.min.css
 
 app/static/js/bootstrap.min.js linguist-vendored
 app/static/js/purecounter.min.js linguist-vendored
