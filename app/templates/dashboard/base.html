@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Dashboard - Agrowatcher{% endblock %}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -28,12 +28,12 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url_for('dashboard.home') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-leaf"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Agrowatcher</div>
             </a>
@@ -224,11 +224,15 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid" style="height: 80% !important;">
 
                     {% block content %}
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+{#                        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>#}
+                        <iframe
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=7.016744613647462%2C46.960338921161195%2C7.129526138305665%2C47.01356148703461&amp;layer=mapnik"
+                                style="border: 1px solid black; width: 100%; height: 100%;">
+                        </iframe>
                     {% endblock %}
 
                 </div>

@@ -32,7 +32,7 @@ switch_ndvi = Switch({
 })
 
 # Load client data from configs
-with open("data/secrets.json", "r", encoding="utf-8") as secrets_file:
+with open("../data/secrets.json", "r", encoding="utf-8") as secrets_file:
     secrets: dict = json.load(secrets_file)
 
 # Credentials
