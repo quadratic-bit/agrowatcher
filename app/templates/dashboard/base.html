@@ -11,14 +11,21 @@
 
     <title>{% block title %}Dashboard - Agrowatcher{% endblock %}</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this page -->
     <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- OpenLayers styles for mapping -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css" type="text/css">
+
+    <!-- OpenLayers script -->
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+
+    <!-- Custom styles for this page -->
     <link href="{{ url_for('static', filename='css/dashboard.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/maps.css') }}" rel="stylesheet">
 
 </head>
 
@@ -227,12 +234,14 @@
                 <div class="container-fluid" style="height: 80% !important;">
 
                     {% block content %}
-                        <!-- Page Heading -->
+{#                        <!-- Page Heading (default) -->#}
 {#                        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>#}
-                        <iframe
-                                src="https://www.openstreetmap.org/export/embed.html?bbox=7.016744613647462%2C46.960338921161195%2C7.129526138305665%2C47.01356148703461&amp;layer=mapnik"
-                                style="border: 1px solid black; width: 100%; height: 100%;">
-                        </iframe>
+                        <!-- Instead, let's put a map on a page! -->
+                        <div id="map" class="map"></div>
+                        <form class="form-inline">
+                            <label for="type">Geometry type: &nbsp; Polygon</label>
+                            <input class="form-control mr-2 mb-2 mt-2" type="button" value="Undo" id="undo">
+                        </form>
                     {% endblock %}
 
                 </div>
@@ -281,16 +290,18 @@
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript -->
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-    <!-- Core plugin JavaScript-->
+    <!-- Core plugin JavaScript -->
     <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-    <!-- Custom scripts for all pages-->
+    <!-- Custom scripts for all pages -->
     <script src="{{ url_for('static', filename='js/dashboard.min.js') }}"></script>
+
+    <!-- Custom scripts for dashboard -->
+    <script type="module" src="{{ url_for('static', filename='js/mapping.js') }}"></script>
 
 </body>
 
