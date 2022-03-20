@@ -238,9 +238,16 @@
 {#                        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>#}
                         <!-- Instead, let's put a map on a page! -->
                         <div id="map" class="map"></div>
-                        <form class="form-inline">
-                            <label for="type">Geometry type: &nbsp; Polygon</label>
-                            <input class="form-control mr-2 mb-2 mt-2" type="button" value="Undo" id="undo">
+                        <form class="form-inline" style="display: flex; justify-content: space-between; font-size: larger;">
+                            <label for="type">Площадь поля: &nbsp;<span id="the_area">-</span>m<sup>2</sup></label>&nbsp;&nbsp;
+                            <div>
+                                <input class="form-control btn-outline-dark mr-2 mb-2 mt-2"
+                                       type="button" value="Отменить" id="undo">
+                                <input class="form-control btn-outline-danger mr-2 mb-2 mt-2"
+                                       type="button" value="Очистить" id="clear">
+                                <input class="form-control btn-outline-success mr-2 mb-2 mt-2"
+                                       type="button" disabled value="Завершить" id="complete">
+                            </div>
                         </form>
                     {% endblock %}
 
