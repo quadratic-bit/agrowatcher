@@ -1,5 +1,5 @@
 # AgroWatcher
-## Currently, migrating to Flask
+## Tool for Precision agriculture with Flask, Bootstrap, SentinelHub and OpenLayers
 ### To launch application run
 ```shell
 export FLASK_APP=app
