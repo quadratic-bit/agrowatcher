@@ -54,13 +54,31 @@ document.getElementById('complete').addEventListener('click', function () {
     finish_button.classList.add("btn-outline-success");
     finish_button.disabled = true;
 
-    $.post("/api/pin_field", {
-        field_coordinates: JSON.stringify(coordinates),
-        field_area: area
+    $.ajax({
+        type: "POST",
+        url: "/api/pin_field",
+        data: {
+            field_coordinates: JSON.stringify(coordinates),
+            field_area: area
+        },
+        complete: function(e, xhr, settings){
+            if (e.status === 200) {
+                swal("Успешно!", "Теперь вы можете вернуться на главную страницу", "success");
+            } else {
+                swal("Ошибка!", "Что-то пошло не так", "error");
+            }
+        }
     });
+
+    // $.post("/api/pin_field", {
+    //     field_coordinates: JSON.stringify(coordinates),
+    //     field_area: area
+    // });
 });
 
 source.on('addfeature', function(evt) {
+    $(".alert").alert();
+
     let this_feature = evt.feature;
     let features = vector.getSource().getFeatures();
 
@@ -73,7 +91,11 @@ source.on('addfeature', function(evt) {
     finish_button.classList.remove("btn-outline-success");
     finish_button.classList.add("btn-success");
     finish_button.disabled = false;
-    area_span.textContent = area.toString();
+    if (area > 500000) {
+        area_span.textContent = (Math.round(area / 10000) / 100).toString() + "k";
+    } else {
+        area_span.textContent = area.toString();
+    }
 
     features.forEach((feature) => {
         if (feature !== this_feature) {
