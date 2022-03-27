@@ -1,5 +1,6 @@
 from app.models.database import db
 from app.models.users import User  # noqa
+from app.models.fields import Field  # noqa
 from app import create_app
 
 

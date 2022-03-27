@@ -54,52 +54,30 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Поля
+            </div>
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('dashboard.home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span style="color: white !important;font-weight: bold;">Выбрать поле</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span style="color: white !important;font-weight: bold;">Территории</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="#">Buttons</a>
-                        <a class="collapse-item" href="#">Cards</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="#">Colors</a>
-                        <a class="collapse-item" href="#">Borders</a>
-                        <a class="collapse-item" href="#">Animations</a>
-                        <a class="collapse-item" href="#">Other</a>
+                        <h6 class="collapse-header">Доступные территории</h6>
+                        <a class="collapse-item" href="{{ url_for('dashboard.view', idf=1) }}">Поле 1</a>
+                        <a class="collapse-item" href="#">Поле 2</a>
                     </div>
                 </div>
             </li>
@@ -109,43 +87,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Пользователь
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="#">Login</a>
-                        <a class="collapse-item" href="#">Register</a>
-                        <a class="collapse-item" href="#">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="#">404 Page</a>
-                        <a class="collapse-item" href="#">Blank Page</a>
-                    </div>
-                </div>
-            </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span style="color: white !important;font-weight: bold;">Настройки</span></a>
             </li>
 
             <!-- Divider -->
@@ -206,7 +155,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Username</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ current_user.name }}</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -240,21 +189,8 @@
                 <div class="container-fluid" style="height: 80% !important;">
 
                     {% block content %}
-{#                        <!-- Page Heading (default) -->#}
-{#                        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>#}
-                        <!-- Instead, let's put a map on a page! -->
-                        <div id="map" class="map"></div>
-                        <form class="form-inline" style="display: flex; justify-content: space-between; font-size: larger;">
-                            <label for="type">Площадь поля: &nbsp;<span id="the_area">-</span>m<sup>2</sup></label>&nbsp;&nbsp;
-                            <div>
-                                <input class="form-control btn-outline-dark mr-2 mb-2 mt-2"
-                                       type="button" value="Отменить" id="undo">
-                                <input class="form-control btn-outline-danger mr-2 mb-2 mt-2"
-                                       type="button" value="Очистить" id="clear">
-                                <input class="form-control btn-outline-success mr-2 mb-2 mt-2"
-                                       type="button" disabled value="Завершить" id="complete">
-                            </div>
-                        </form>
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
                     {% endblock %}
 
                 </div>
@@ -314,7 +250,8 @@
     <script src="{{ url_for('static', filename='js/dashboard.min.js') }}"></script>
 
     <!-- Custom scripts for dashboard -->
-    <script type="module" src="{{ url_for('static', filename='js/mapping.js') }}"></script>
+    {% block scripts %}
+    {% endblock %}
 
 </body>
 
