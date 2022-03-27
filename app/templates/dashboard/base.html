@@ -76,8 +76,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Доступные территории</h6>
-                        <a class="collapse-item" href="{{ url_for('dashboard.view', idf=1) }}">Поле 1</a>
-                        <a class="collapse-item" href="#">Поле 2</a>
+                        {% for field in fields %}
+                            <a class="collapse-item" href="{{ url_for('dashboard.view', index=field.id) }}">Поле {{ loop.index }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </li>

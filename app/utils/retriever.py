@@ -2,6 +2,8 @@ import json
 import math
 from datetime import datetime, timedelta
 
+from pathlib import Path
+
 import sentinelhub
 from PIL import Image
 from sentinelhub import SentinelHubRequest, DataCollection, MimeType, CRS, BBox, SHConfig, Geometry
@@ -32,8 +34,11 @@ switch_ndvi = Switch({
     (0.9, math.inf): [0, 104, 55]
 })
 
+APP_FOLDER = Path(__file__).parent.parent
+
 # Load client data from configs
-with open("../data/secrets.json", "r", encoding="utf-8") as secrets_file:
+with open(APP_FOLDER.joinpath("data/secrets.json"), "r",
+          encoding="utf-8") as secrets_file:
     secrets: dict = json.load(secrets_file)
 
 # Credentials
@@ -111,4 +116,4 @@ def colour_ndvi(output_="out.jpg", polygon=None, days=15, save_image=False,
                 ndvi = (NIR - RED) / denominator if denominator != 0 else 0.0
                 image_arr_rgb[y, x][0], image_arr_rgb[y, x][1], image_arr_rgb[y, x][2] = \
                     switch_ndvi[ndvi]
-    Image.fromarray(image_arr_rgb).save(output_)
+    Image.fromarray(image_arr_rgb).save(APP_FOLDER.joinpath(output_))

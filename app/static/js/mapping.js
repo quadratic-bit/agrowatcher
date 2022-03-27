@@ -63,17 +63,13 @@ document.getElementById('complete').addEventListener('click', function () {
         },
         complete: function(e, xhr, settings){
             if (e.status === 200) {
-                swal("Успешно!", "Теперь вы можете вернуться на главную страницу", "success");
+                swal("Успешно!", "Теперь вы сможете увидеть поле на панели слева", "success")
+                    .then((value) => window.location.reload());
             } else {
                 swal("Ошибка!", "Что-то пошло не так", "error");
             }
         }
     });
-
-    // $.post("/api/pin_field", {
-    //     field_coordinates: JSON.stringify(coordinates),
-    //     field_area: area
-    // });
 });
 
 source.on('addfeature', function(evt) {

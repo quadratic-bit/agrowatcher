@@ -10,8 +10,8 @@ bp_api = Blueprint("api", __name__, url_prefix="/api")
 
 @bp_api.route("/pin_field", methods=["POST"])
 def pin() -> Response:
-    coords: list = literal_eval(request.form["field_coordinates"])
-    area = int(request.form["field_area"])
+    coords: list = literal_eval(request.form["field_coordinates"])[0]
+    area = int(float(request.form["field_area"]))
     if not current_user.is_authenticated:
         return Response(
             "User is unauthorised",
@@ -22,11 +22,14 @@ def pin() -> Response:
             status=400)
     else:
         field = Field(
-            polygon=request.form["field_coordinates"],
+            polygon=request.form["field_coordinates"][1:-1],
             area=area,
             user_id=current_user.id)
         db.session.add(field)
         db.session.commit()
         return Response(
-            "ok",
+            {
+                "ok": True,
+                "index": field.id
+            },
             status=200)
