@@ -28,27 +28,56 @@
                         <p class="mb-4">Заполните поля ниже для регистрации. Уже есть аккаунт? <a class="blue" href="{{ url_for('auth.login') }}">Войти</a></p>
 
                         <!-- Sign Up Form -->
-                        <form>
+                        <form action="" method="post">
+                            {{ form.hidden_tag() }}
                             <div class="mb-4 form-floating">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                {{ form.email(class="form-control", type="email", id="floatingInput", placeholder="Email адрес", required=true) }}
                                 <label for="floatingInput">Email адрес</label>
+                                {% for error in form.email.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
                             </div>
                             <div class="mb-4 form-floating">
-                                <input type="text" class="form-control" id="floatingInput2" placeholder="Your name">
-                                <label for="floatingInput">Ваше имя</label>
+                                {{ form.name(class="form-control", type="text", id="floatingInput2", placeholder="Ваше имя", required=true) }}
+                                <label for="floatingInput2">Ваше имя</label>
+                                {% for error in form.name.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
                             </div>
                             <div class="mb-4 form-floating">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Пароль</label>
+                                {{ form.password(class="form-control", type="password", id="floatingPassword", placeholder="Придумайте надёжный пароль", minlength="6", required=true) }}
+                                <label for="floatingPassword">Придумайте надёжный пароль</label>
+                                {% for error in form.password.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="mb-4 form-floating">
+                                {{ form.password_again(class="form-control", type="password", id="floatingPasswordRepeat", placeholder="Повторите пароль", minlength="6", required=true) }}
+                                <label for="floatingPasswordRepeat">Повторите пароль</label>
+                                {% for error in form.password_again.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
                             </div>
                             <div class="mb-4 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                                 <label class="form-check-label" for="exampleCheck1">Я согласен с <a href="{{ url_for('misc.privacy') }}">Политикой конфиденциальности</a> и <a href="{{ url_for('misc.terms') }}">Условиями использования</a></label>
                             </div>
-                            <button type="submit" class="form-control-submit-button">Зарегистрироваться</button>
+                            {{ form.submit(type="submit", class="form-control-submit-button") }}
+                            {% if message %}
+                                <div class="invalid-feedback d-block">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
                         </form>
                         <!-- end of sign up form -->
-
                     </div> <!-- end of text-box -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->

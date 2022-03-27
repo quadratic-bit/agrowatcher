@@ -1,0 +1,25 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}
+    Выбрать поле - Agrowatcher
+{% endblock %}
+
+{% block content %}
+    <div id="map" class="map"></div>
+    <form class="form-inline"
+          style="display: flex; justify-content: space-between; font-size: larger;">
+        <label for="type">Площадь поля: &nbsp;<span id="the_area">-</span>m<sup>2</sup></label>&nbsp;&nbsp;
+        <div>
+            <input class="form-control btn-outline-dark mr-2 mb-2 mt-2"
+                   type="button" value="Отменить" id="undo">
+            <input class="form-control btn-outline-danger mr-2 mb-2 mt-2"
+                   type="button" value="Очистить" id="clear">
+            <input class="form-control btn-outline-success mr-2 mb-2 mt-2"
+                   type="button" disabled value="Завершить" id="complete">
+        </div>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script type="module" src="{{ url_for('static', filename='js/mapping.js') }}"></script>
+{% endblock %}
