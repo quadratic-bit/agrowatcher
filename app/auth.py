@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, Response
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 
 from app.models.database import db
 from app.models.users import RegisterForm, User, LoginForm
@@ -21,6 +21,13 @@ def login() -> str | Response:
     return render_template("auth/login.html", form=form)
 
 
+@bp_auth.route("/logout")
+def logout() -> Response:
+    if current_user.is_authenticated:
+        logout_user()
+    return redirect("/auth/login")
+
+
 @bp_auth.route("/signup", methods=["GET", "POST"])
 def signup() -> str | Response:
     if current_user.is_authenticated:
@@ -36,6 +43,6 @@ def signup() -> str | Response:
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        login_user(user, remember=False)
+        login_user(user, remember=form.remember_me.data)
         return redirect("/dashboard")
     return render_template("auth/signup.html", form=form)

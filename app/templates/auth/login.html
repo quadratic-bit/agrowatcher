@@ -48,8 +48,18 @@
                                     </div>
                                 {% endfor %}
                             </div>
-                            {{ form.remember_me() }} {{ form.remember_me.label }}
+                            <div class="mb-4 form-check">
+                                {{ form.remember_me(class="form-check-input", type="checkbox", id="gridCheck") }}
+                                <label class="form-check-label" for="gridCheck">
+                                    Запомнить меня
+                                </label>
+                            </div>
                             {{ form.submit(type="submit", class="form-control-submit-button") }}
+                            {% if message %}
+                                <div class="invalid-feedback d-block">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
                         </form>
                         <!-- end of log in form -->
 
