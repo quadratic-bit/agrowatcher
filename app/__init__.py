@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, render_template
+from flask_login import current_user
 
 from app.auth import bp_auth
 from app.dashboard import bp_dashboard
@@ -27,6 +28,6 @@ def create_app() -> Flask:
 
     @app.route("/")
     def home() -> str:
-        return render_template("index.html")
+        return render_template("index.html", is_auth=current_user.is_authenticated)
 
     return app

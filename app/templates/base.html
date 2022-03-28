@@ -71,9 +71,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <span class="nav-item">
-                        <a class="btn-outline-sm" href="{{ url_for('auth.login') }}">Войти</a>
-                    </span>
+                    {% if is_auth %}
+                        <span class="nav-item">
+                            <a class="btn-outline-sm" href="{{ url_for('dashboard.home') }}">Кабинет</a>
+                        </span>
+                    {% else %}
+                        <span class="nav-item">
+                            <a class="btn-outline-sm" href="{{ url_for('auth.login') }}">Войти</a>
+                        </span>
+                    {% endif %}
                 </div> <!-- end of navbar-collapse -->
             </div> <!-- end of container -->
         </nav> <!-- end of navbar -->
@@ -100,27 +106,15 @@
                         </div> <!-- end of footer-col -->
                         <div class="footer-col third">
                             <span class="fa-stack">
-                                <a href="#something">
+                                <a href="#">
                                     <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                    <i class="fab fa-telegram-plane fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#something">
+                                <a href="#">
                                     <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-twitter fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span class="fa-stack">
-                                <a href="#something">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-pinterest-p fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span class="fa-stack">
-                                <a href="#someting">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-instagram fa-stack-1x"></i>
+                                    <i class="fab fa-patreon fa-stack-1x"></i>
                                 </a>
                             </span>
                             <p class="p-small">Почта поддержки: <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
